@@ -1,0 +1,50 @@
+
+
+<div class="container">
+<h1>Registration</h1>
+{{ form.invalid | json }}
+<form (submit)='onSubmit($event, form)' #form='ngForm' class="form-horizontal">
+
+
+    <div class="panel panel-default">
+    <fieldset class="col-md-6">
+    	<legend>Account Information</legend>
+        <label for="">First Name: </label>
+        <input type="text" name="firstname" value="" minlength='3'[(ngModel)] = 'form.firstname' required><br>
+        <label for="">Last Name: </label>
+        <input type="text" name="lastname" value="" [(ngModel)] = 'form.lastname' ><br>
+        <label for="">Email: </label>
+        <input type="text" name="email" value="" [(ngModel)] = 'form.email'><br>
+        <label for="">Password: </label>
+        <input type="text" name="password" value="" [(ngModel)] = 'form.password'><br>
+        <label for="">Password Confirmation: </label>
+        <input type="text" name="passwordc" value="" [(ngModel)] = 'form.passwordc'><br>
+        <label for="">Street Address: </label>
+        <input type="text" name="address" value="" [(ngModel)] = 'form.address'><br>
+        <label for="">Unit/Apt #: </label>
+        <input type="text" name="apt" value="" [(ngModel)] = 'form.apt'><br>
+        <label for="">City: </label>
+        <input type="text" name="city" value="" [(ngModel)] = 'form.city'><br>
+        <label for="">State: </label>
+        <select class="" name="state">
+            <option name="state" value="">CA</option>
+            <option value="">NV</option>
+        </select><br>
+        <label for="">I'm Feeling Lucky: </label>
+        Yes <input type="radio" name="lucky" value="yes">
+        No <input type="radio" name="lucky" value="no"><br>
+        <fieldset class="col-md-6">
+        <!-- *ngIF shows buttong ok if form is valid -->
+            <input *ngIf='form.valid' type="submit" name="" value="Register">
+        </fieldset>
+
+
+
+
+
+    </fieldset>
+
+	    <div class="clearfix"></div>
+    </div>
+</form>
+</div>
