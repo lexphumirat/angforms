@@ -1,8 +1,13 @@
 
+<div class="">
+    <p *ngFor="let form of forms" > Thank you for registering with us {{form.firstname}}. We just sent you a
+        confirmatin email at {{form.email}}, and we will send all mail to {{form.address}}</p>
 
+</div>
 <div class="container">
 <h1>Registration</h1>
-{{ form.invalid | json }}
+<!-- {{ form.invalid | json }} -->
+
 <form (submit)='onSubmit($event, form)' #form='ngForm' class="form-horizontal">
 
 
@@ -10,7 +15,7 @@
     <fieldset class="col-md-6">
     	<legend>Account Information</legend>
         <label for="">First Name: </label>
-        <input type="text" name="firstname" value="" minlength='3'[(ngModel)] = 'form.firstname' required><br>
+        <input type="text" name="firstname" value="" minlength='3'[ngModel] = 'form.firstname' required><br>
         <label for="">Last Name: </label>
         <input type="text" name="lastname" value="" [(ngModel)] = 'form.lastname' ><br>
         <label for="">Email: </label>
@@ -47,4 +52,22 @@
 	    <div class="clearfix"></div>
     </div>
 </form>
+
+<table>
+ <thead>
+     <tr>
+         First Name
+     </tr>
+ </thead>
+<tbody>
+    <tr *ngFor="let form of forms">
+        <td>{{form.firstname}}</td>
+
+    </tr>
+</tbody>
+
+</table>
+
+
+
 </div>

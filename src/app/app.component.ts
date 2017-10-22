@@ -16,7 +16,7 @@ export class AppComponent {
   onSubmit(event: Event, form): void {
       //.preventDefault stops bowser from refreshing
       event.preventDefault();
-      this.forms.push(this.form);
+      this.forms.push(form.value);
       this.form = new Form();
       form.reset();
 
